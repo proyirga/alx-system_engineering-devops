@@ -4,8 +4,8 @@
 #   user id
 #   Home directory path for the user
 
-FILE="/etc/passwd"
+myfile="/etc/passwd"
 while IFS= read -r line
 do
     echo "$line" | cut -d":" -f1,3,6
-done < "$FILE"
+done < "$myfile"
