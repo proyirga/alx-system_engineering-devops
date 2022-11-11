@@ -6,5 +6,5 @@
 #	Display in a user-oriented format
 #	Show process hierarchy
 
-echo "$(ps -A)"
+echo "$(ps auxf)"
 
