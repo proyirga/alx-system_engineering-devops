@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This is a script to print my PID to the stdio
+
+echo $$
