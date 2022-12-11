@@ -1,1 +1,0 @@
-Shell variable expanssions projects
