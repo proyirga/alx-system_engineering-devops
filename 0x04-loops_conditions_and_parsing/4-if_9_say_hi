@@ -3,7 +3,7 @@
 # but for the 9th iteration, displays Best School
 # and then Hi on a new line.
 
-i=0
+i=1
 
 while ((i <= 10))
 do
