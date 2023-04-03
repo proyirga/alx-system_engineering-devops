@@ -10,14 +10,14 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend  proyirga-frontend
+frontend  proyirga
         bind *:80
         mode http
         default_backend proyirga-backend
 backend proyirga-backend
         balance roundrobin
-	server 82898-web-01 35.153.193.233 check	
-	server 82898-web-02 52.3.255.128 check
+	server 82898-web-01 34.207.154.112 check	
+	server 82898-web-02 54.157.129.110 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
