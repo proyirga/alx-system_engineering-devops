@@ -47,5 +47,5 @@ frontend proyirga-frontend-https
 
 backend proyirga-backend
         balance roundrobin
-        server 82898-web-0135.153.193.233:80 check
-        server 82898-web-02 52.3.255.128:80 check
+        server 82898-web-01 34.207.154.112:80 check
+        server 82898-web-02 54.157.129.110:80 check
