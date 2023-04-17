@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# write a Bash script that accepts one argument
+# the script should run the whoami command under the user passed as an argument
+#
+if [[ "$(whoami)" != 'root' ]]
+then
+echo "$1"
+fi
+
