@@ -4,6 +4,6 @@
 #
 if [[ "$(whoami)" != 'root' ]]
 then
-echo "$1"
+sudo -u "$1" whoami
 fi
 
