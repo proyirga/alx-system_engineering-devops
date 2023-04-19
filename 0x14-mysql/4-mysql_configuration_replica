@@ -40,6 +40,6 @@ server-id       = 2
 # Binlog
 log_bin         = /var/log/mysql/mysql-bin.log
 # Database list to replicate from
-binlog_do_db    = db
+binlog_do_db    = tyrell_corp
 # add a relay-log directive defining the location of the replica’s relay log
 relay-log       = /var/log/mysql/mysql-relay-bin.log
