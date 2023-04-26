@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""
 # Python script that returns information about TODO list progress.
 # Requirements:
 #
@@ -6,7 +7,7 @@
 #   The script must accept an integer as a parameter, which is the employee ID
 #   The script must display on the standard output the employee TODO list
 #       progress in this exact format:
-
+"""
 import requests
 import sys
 
