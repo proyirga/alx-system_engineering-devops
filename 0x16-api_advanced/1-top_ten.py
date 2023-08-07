@@ -8,12 +8,16 @@ Requirements:
     If not a valid subreddit, print None.
     NOTE: Invalid subreddits may return a redirect to search results. Ensure that you are not following redirects.
 """
+
+
 from requests import get
 
 
 def top_ten(subreddit):
     """
     prints the titles of the first 10 hot posts
+    Args:
+        subreddit
     """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
