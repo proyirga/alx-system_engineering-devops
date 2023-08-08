@@ -21,9 +21,8 @@ def top_ten(subreddit):
     """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"User-Agent": "Linux arm; rv:99.0"}
     params = {'limit': '10'}
-    response = get(url, headers=headers, params=params)
+    response = get(url, params=params)
     if response.status_code == 404:
         print("None")
         return
