@@ -22,7 +22,7 @@ def top_ten(subreddit):
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     params = {'limit': '10'}
-    response = get(url, params=params)
+    response = get(url, params=params, allow_redirects=False)
     if response.status_code == 404:
         print("None")
         return
