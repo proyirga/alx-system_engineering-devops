@@ -20,9 +20,13 @@ def top_ten(subreddit):
         subreddit
     """
 
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)i
+    headers = {
+        "User-Agent": "X11; Ubuntu; Linux x86_64; rv:109.0 (by /u/proyirga)"
+    }
     params = {'limit': '10'}
-    response = get(url, params=params, allow_redirects=False)
+    response = get(url, params=params, headers=headers, allow_redirects=False)
+
     if response.status_code == 404:
         print("None")
         return
