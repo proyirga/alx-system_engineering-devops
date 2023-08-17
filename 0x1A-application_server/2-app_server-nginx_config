@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name 35.174.207.234;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/web_flask/web_flask.sock;
+    }
+}
+
+
