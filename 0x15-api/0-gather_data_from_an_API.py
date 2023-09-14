@@ -12,27 +12,16 @@ import requests
 import sys
 
 
-if __name__ == '__main__':
-    employeeId = sys.argv[1]
-    baseUrl = "https://jsonplaceholder.typicode.com/users"
-    url = baseUrl + "/" + employeeId
+if __name__ =='__main__':
 
-    response = requests.get(url)
-    employeeName = response.json().get('name')
-
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
-    tasks = response.json()
-    done = 0
-    done_tasks = []
-
-    for task in tasks:
-        if task.get('completed'):
-            done_tasks.append(task)
-            done += 1
-
-    print("Employee {} is done with tasks({}/{}):"
-          .format(employeeName, done, len(tasks)))
-
-    for task in done_tasks:
-        print("\t {}".format(task.get('title')))
+    def get_employees_todo_list(employee_id):
+        url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+        response = requests.get(url)
+        todos = response.json()
+        employee_name = todos[0]["name"]
+        total_tasks = len(todos)
+        done_tasks = sum(todo["completed"] for todo in todos)
+        print(f"Employee {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
+        for todo in todos:
+            if todo["completed"]:
+                print(f"\t{todo['title']}")
