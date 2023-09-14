@@ -12,13 +12,16 @@ import requests
 import sys
 
 
-if __name__ =='__main__':
+if __name__ == '__main__':
 
     def get_employees_todo_list(employee_id):
-        url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+        url = f"https://jsonplaceholder.typicode.com/todos/{employee_id}"
         response = requests.get(url)
         todos = response.json()
-        employee_name = todos[0]["name"]
+        if "name" in todos[0]:
+            employee_name = todos[0]["name"]
+        else:
+            employee_name = "Unknown"
         total_tasks = len(todos)
         done_tasks = sum(todo["completed"] for todo in todos)
         print(f"Employee {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
